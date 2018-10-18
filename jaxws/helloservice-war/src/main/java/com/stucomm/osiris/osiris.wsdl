@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions
+        name="ResultaatService" targetNamespace="http://osiris/services/ResultaatService.wsdl"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://osiris/services/ResultaatService.wsdl"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:tns0="http://osiris/services/ResultaatService.wsdl/types/">
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema"
+                targetNamespace="http://osiris/services/ResultaatService.wsdl/types/" elementFormDefault="qualified"
+                xmlns:tns="http://osiris/services/ResultaatService.wsdl/types/"
+                xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <complexType name="OswPorResultatenRtUserArray">
+                <sequence>
+                    <element name="OswPorResultatenRtUser" type="tns:OswPorResultatenRtUser" nillable="true"
+                             minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </complexType>
+            <complexType name="OswPorResultatenRtUser">
+                <complexContent>
+                    <extension base="tns:OswPorResultatenRtBase">
+                        <sequence>
+                            <element name="honorairePunten" type="decimal"
+                                     nillable="true"/>
+                            <element name="voldoende" type="string"
+                                     nillable="true"/>
+                            <element name="cursuscode" type="string"
+                                     nillable="true"/>
+                            <element name="langeNaamCursus" type="string"
+                                     nillable="true"/>
+                            <element name="studentnummer" type="string"
+                                     nillable="true"/>
+                            <element name="status" type="string"
+                                     nillable="true"/>
+                            <element name="resultaat" type="string"
+                                     nillable="true"/>
+                            <element name="docent" type="string"
+                                     nillable="true"/>
+                            <element name="onderwerp" type="string"
+                                     nillable="true"/>
+                            <element name="mutatiedatumTekst" type="string"
+                                     nillable="true"/>
+                            <element name="mutatiedatum" type="dateTime"
+                                     nillable="true"/>
+                            <element name="korteNaamCursus" type="string"
+                                     nillable="true"/>
+                            <element name="toetsdatumTekst" type="string"
+                                     nillable="true"/>
+                            <element name="toetsomschrijving" type="string"
+                                     nillable="true"/>
+                            <element name="punten" type="decimal"
+                                     nillable="true"/>
+                            <element name="toetsdatum" type="dateTime"
+                                     nillable="true"/>
+                            <element name="weging" type="decimal" nillable="true"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <complexType name="OswPorResultatenRtBase">
+                <sequence/>
+            </complexType>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="ResultaatService_resultaten">
+        <wsdl:part name="pStudentnummer" type="xsd:string"/>
+        <wsdl:part name="pTaal" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="ResultaatService_resultatenResponse">
+        <wsdl:part name="result" type="tns0:OswPorResultatenRtUserArray"/>
+    </wsdl:message>
+    <wsdl:message name="ResultaatService_resultatenCursus">
+        <wsdl:part name="pStudentnummer" type="xsd:string"/>
+        <wsdl:part name="pCursus" type="xsd:string"/>
+        <wsdl:part name="pCollegejaar" type="xsd:decimal"/>
+        <wsdl:part name="pTaal" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="ResultaatService_resultatenCursusResponse">
+        <wsdl:part name="result" type="tns0:OswPorResultatenRtUserArray"/>
+    </wsdl:message>
+    <wsdl:portType name="ResultaatService">
+        <wsdl:operation name="resultaten" parameterOrder="pStudentnummer pTaal">
+            <wsdl:input message="tns:ResultaatService_resultaten"/>
+            <wsdl:output message="tns:ResultaatService_resultatenResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="resultatenCursus"
+                        parameterOrder="pStudentnummer pCursus pCollegejaar pTaal">
+            <wsdl:input message="tns:ResultaatService_resultatenCursus"/>
+            <wsdl:output message="tns:ResultaatService_resultatenCursusResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ResultaatService" type="tns:ResultaatService">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="resultaten">
+            <soap:operation soapAction="http://osiris/services/ResultaatService.wsdl/resultaten"/>
+            <wsdl:input>
+                <soap:body use="literal" namespace="http://osiris/services/ResultaatService.wsdl"
+                           parts="pStudentnummer pTaal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" namespace="http://osiris/services/ResultaatService.wsdl" parts="result"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="resultatenCursus">
+            <soap:operation soapAction="http://osiris/services/ResultaatService.wsdl/resultatenCursus"/>
+            <wsdl:input>
+                <soap:body use="literal" namespace="http://osiris/services/ResultaatService.wsdl"
+                           parts="pStudentnummer pCursus pCollegejaar pTaal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" namespace="http://osiris/services/ResultaatService.wsdl" parts="result"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ResultaatService">
+        <wsdl:port name="ResultaatServicePort" binding="tns:ResultaatService">
+            <soap:address location="http://localhost:7101/OsirisServices-PortalServices/ResultaatServicePort"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

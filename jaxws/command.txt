@@ -1,0 +1,1 @@
+curl -d "@request.txt" -H "Content-Type: text/xml" -X POST http://localhost:8080/helloservice-war/OsirisMockServiceService

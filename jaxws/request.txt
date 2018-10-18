@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.stucomm.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <impl:resultaten>
+         <!--Optional:-->
+         <arg0>?</arg0>
+         <!--Optional:-->
+         <arg1>?</arg1>
+      </impl:resultaten>
+   </soapenv:Body>
+</soapenv:Envelope>

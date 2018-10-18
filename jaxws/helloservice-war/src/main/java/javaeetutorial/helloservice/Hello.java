@@ -13,7 +13,7 @@ import javax.jws.WebMethod;
 @WebService
 public class Hello {
 
-    private final String message = "Hello, ";
+    private final String message = "Ciao, ";
 
     public void Hello() {
     }

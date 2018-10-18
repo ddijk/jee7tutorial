@@ -1,0 +1,1 @@
+http://localhost:8080/helloservice-war/OsirisMockServiceService?Tester

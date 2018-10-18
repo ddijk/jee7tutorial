@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://osiris/services/ResultaatService.wsdl">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:resultaten>
+         <pStudentnummer>aa</pStudentnummer>
+         <pTaal>bb</pTaal>
+      </res:resultaten>
+   </soapenv:Body>
+</soapenv:Envelope>
