@@ -11,11 +11,15 @@
  */
 package javaeetutorial.order.ejb;
 
+import javaeetutorial.order.Main;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
+import javax.ejb.EJBException;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -28,8 +32,22 @@ public class ConfigBean {
     @EJB
     private RequestBean request;
 
+    public static void main(String[] args) {
+        ConfigBean configBean = new ConfigBean();
+
+        configBean.request = new RequestBean();
+        configBean.request.em = Main.getEntitiyManager();
+
+        EntityManager em = configBean.request.em;
+
+        em.getTransaction().begin();
+        configBean.createData();
+        em.getTransaction().commit();
+    }
+
     @PostConstruct
     public void createData() {
+
         request.createPart("1234-5678-01", 1, "ABC PART",
                 new java.util.Date(), "PARTQWERTYUIOPASXDCFVGBHNJMKL", null);
         request.createPart("9876-4321-02", 2, "DEF PART",

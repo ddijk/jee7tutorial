@@ -30,7 +30,7 @@ import javax.persistence.PersistenceContext;
 public class RequestBean {
     
     @PersistenceContext
-    private EntityManager em;
+    EntityManager em;
 
     private static final Logger logger = Logger.getLogger("order.ejb.RequestBean");
     

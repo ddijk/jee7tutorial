@@ -7,7 +7,10 @@
  */
 package javaeetutorial.order.entity;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+
 import static javax.persistence.CascadeType.ALL;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -41,7 +44,7 @@ public class Vendor implements java.io.Serializable {
     private String address;
     private String contact;
     private String phone;
-    private Collection<VendorPart> vendorParts;
+    private Collection<VendorPart> vendorParts = new ArrayList<>();
     
     public Vendor() {}
     
