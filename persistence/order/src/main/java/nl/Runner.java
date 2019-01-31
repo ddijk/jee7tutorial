@@ -3,6 +3,9 @@ package nl;
 import javaeetutorial.order.Main;
 
 import javax.persistence.EntityManager;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import java.util.List;
 
 public class Runner {

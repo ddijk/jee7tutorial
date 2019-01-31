@@ -1,0 +1,1 @@
+insert into su_user (username, student_number) values ('dick', 'dick');

@@ -5,11 +5,11 @@
     <packaging>pom</packaging>
     <name>persistence</name>
   
-    <parent>
-        <groupId>org.glassfish.javaeetutorial</groupId>
-        <artifactId>javaeetutorial</artifactId>
-        <version>7.0.5</version>
-    </parent>
+    <!--<parent>-->
+        <!--<groupId>org.glassfish.javaeetutorial</groupId>-->
+        <!--<artifactId>javaeetutorial</artifactId>-->
+        <!--<version>7.0.5</version>-->
+    <!--</parent>-->
     
     <modules>
         <module>address-book</module>
