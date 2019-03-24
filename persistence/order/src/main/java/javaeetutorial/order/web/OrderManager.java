@@ -11,20 +11,21 @@
  */
 package javaeetutorial.order.web;
 
-import java.io.Serializable;
-import java.util.Iterator;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javaeetutorial.order.ejb.RequestBean;
 import javaeetutorial.order.entity.CustomerOrder;
 import javaeetutorial.order.entity.LineItem;
 import javaeetutorial.order.entity.Part;
+
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIParameter;
 import javax.faces.event.ActionEvent;
+import java.io.Serializable;
+import java.util.Iterator;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
