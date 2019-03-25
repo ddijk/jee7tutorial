@@ -1,4 +1,4 @@
-package javaeetutorial.roster.entity;
+package com.ns.lala.roster.entity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

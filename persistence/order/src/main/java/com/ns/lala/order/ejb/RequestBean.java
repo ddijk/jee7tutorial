@@ -5,7 +5,7 @@
  * compliance with  the terms of the License at:
  * http://java.net/projects/javaeetutorial/pages/BerkeleyLicense
  */
-package javaeetutorial.order.ejb;
+package com.ns.lala.order.ejb;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,12 +14,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javaeetutorial.order.entity.CustomerOrder;
-import javaeetutorial.order.entity.LineItem;
-import javaeetutorial.order.entity.Part;
-import javaeetutorial.order.entity.PartKey;
-import javaeetutorial.order.entity.Vendor;
-import javaeetutorial.order.entity.VendorPart;
+import com.ns.lala.order.entity.CustomerOrder;
+import com.ns.lala.order.entity.LineItem;
+import com.ns.lala.order.entity.Part;
+import com.ns.lala.order.entity.PartKey;
+import com.ns.lala.order.entity.Vendor;
+import com.ns.lala.order.entity.VendorPart;
 import javax.ejb.EJBException;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;

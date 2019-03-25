@@ -5,7 +5,7 @@
  * compliance with  the terms of the License at:
  * http://java.net/projects/javaeetutorial/pages/BerkeleyLicense
  */
-package javaeetutorial.order.entity;
+package com.ns.lala.order.entity;
 
 import java.io.Serializable;
 

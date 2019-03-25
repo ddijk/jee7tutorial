@@ -1,7 +1,7 @@
-package javaeetutorial;
+package com.ns.lala;
 
-import javaeetutorial.order.entity.CustomerOrder;
-import javaeetutorial.order.repository.CustomerOrderRepository;
+import com.ns.lala.order.entity.CustomerOrder;
+import com.ns.lala.order.repository.CustomerOrderRepository;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/order")
 public class OrderController implements InitializingBean {
+
+    static int n = 0;
 
     @Autowired
     CustomerOrderRepository customerOrderRepository;
@@ -30,7 +32,7 @@ public class OrderController implements InitializingBean {
     @GetMapping("")
     public ResponseEntity<CustomerOrder> getOrder() {
 
-        CustomerOrder order = new CustomerOrder(1, 's', 5, "Zonneweide");
+        CustomerOrder order = new CustomerOrder(1, 's', 5+ n++, "Zonneweide");
 
         final CustomerOrder customerOrder = customerOrderRepository.save(order);
 

@@ -9,16 +9,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaeetutorial.order.ejb;
-
-import javaeetutorial.order.Main;
+package com.ns.lala.order.ejb;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.ejb.EJBException;
 import javax.persistence.EntityManager;
 
 /**

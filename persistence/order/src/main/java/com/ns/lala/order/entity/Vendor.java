@@ -5,11 +5,10 @@
  * compliance with  the terms of the License at:
  * http://java.net/projects/javaeetutorial/pages/BerkeleyLicense
  */
-package javaeetutorial.order.entity;
+package com.ns.lala.order.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 import static javax.persistence.CascadeType.ALL;
 import javax.persistence.Column;

@@ -9,12 +9,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaeetutorial.order.web;
+package com.ns.lala.order.web;
 
-import javaeetutorial.order.ejb.RequestBean;
-import javaeetutorial.order.entity.CustomerOrder;
-import javaeetutorial.order.entity.LineItem;
-import javaeetutorial.order.entity.Part;
+import com.ns.lala.order.ejb.RequestBean;
+import com.ns.lala.order.entity.CustomerOrder;
+import com.ns.lala.order.entity.LineItem;
+import com.ns.lala.order.entity.Part;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
