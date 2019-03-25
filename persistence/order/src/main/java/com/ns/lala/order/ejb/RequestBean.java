@@ -7,6 +7,13 @@
  */
 package com.ns.lala.order.ejb;
 
+import com.ns.lala.order.entity.*;
+import org.springframework.stereotype.Repository;
+
+import javax.ejb.EJBException;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,19 +21,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.ns.lala.order.entity.CustomerOrder;
-import com.ns.lala.order.entity.LineItem;
-import com.ns.lala.order.entity.Part;
-import com.ns.lala.order.entity.PartKey;
-import com.ns.lala.order.entity.Vendor;
-import com.ns.lala.order.entity.VendorPart;
-import javax.ejb.EJBException;
-import javax.ejb.Stateful;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 
-@Stateful
+@Repository
+@Transactional
 public class RequestBean {
     
     @PersistenceContext

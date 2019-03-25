@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2014 Oracle and/or its affiliates. All rights reserved.
- *
+ * <p>
  * You may not modify, use, reproduce, or distribute this software except in
  * compliance with  the terms of the License at:
  * http://java.net/projects/javaeetutorial/pages/BerkeleyLicense
@@ -11,29 +11,27 @@
  */
 package com.ns.lala.order.ejb;
 
-import javax.annotation.PostConstruct;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import javax.annotation.PreDestroy;
-import javax.ejb.EJB;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
 import javax.persistence.EntityManager;
 
 /**
- *
  * @author ian
  */
-@Singleton
-@Startup
-public class ConfigBean {
+@Service
+public class ConfigBean implements InitializingBean {
 
-    @EJB
+    @Autowired
     private RequestBean request;
+
 
     public static void main(String[] args) {
         ConfigBean configBean = new ConfigBean();
 
         configBean.request = new RequestBean();
-        configBean.request.em = Main.getEntitiyManager();
 
         EntityManager em = configBean.request.em;
 
@@ -42,7 +40,6 @@ public class ConfigBean {
         em.getTransaction().commit();
     }
 
-    @PostConstruct
     public void createData() {
 
         request.createPart("1234-5678-01", 1, "ABC PART",
@@ -100,6 +97,14 @@ public class ConfigBean {
 
     @PreDestroy
     public void deleteData() {
-        
+
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+
+        System.out.println("Creating data:");
+        createData();
+        System.out.println("Creating data DONE");
     }
 }
