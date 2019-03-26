@@ -27,19 +27,6 @@ public class ConfigBean implements InitializingBean {
     @Autowired
     private RequestBean request;
 
-
-    public static void main(String[] args) {
-        ConfigBean configBean = new ConfigBean();
-
-        configBean.request = new RequestBean();
-
-        EntityManager em = configBean.request.em;
-
-        em.getTransaction().begin();
-        configBean.createData();
-        em.getTransaction().commit();
-    }
-
     public void createData() {
 
         request.createPart("1234-5678-01", 1, "ABC PART",
@@ -80,14 +67,14 @@ public class ConfigBean implements InitializingBean {
         request.createVendorPart("SDFG-ERTY-BN", 7,
                 "PART5", 345.87, 100);
 
-        Integer orderId = new Integer(1111);
+        int orderId = 1111;
         request.createOrder(orderId, 'N', 10,
                 "333 New Court, New City, CA 90000");
         request.addLineItem(orderId, "1234-5678-01", 1, 3);
         request.addLineItem(orderId, "9876-4321-02", 2, 5);
         request.addLineItem(orderId, "ABCD-XYZW-FF", 5, 7);
 
-        orderId = new Integer(4312);
+        orderId = 4312;
         request.createOrder(orderId, 'N', 0,
                 "333 New Court, New City, CA 90000");
         request.addLineItem(orderId, "SDFG-ERTY-BN", 7, 1);

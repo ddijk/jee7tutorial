@@ -18,10 +18,8 @@ import static javax.persistence.CascadeType.ALL;
 
 @Entity
 @Table(name = "PERSISTENCE_ROSTER_LEAGUE")
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "tag_type")
 @Data
-public abstract class League implements Serializable,  Tag  {
+public abstract class League implements Serializable {
     private static final long serialVersionUID = 5060910864394673463L;
     protected String id;
     protected String naam;

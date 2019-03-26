@@ -15,7 +15,6 @@ import javax.persistence.Entity;
 import java.io.Serializable;
 
 @Entity
-@DiscriminatorValue("zomer")
 @Data
 public class SummerLeague extends League implements Serializable{
     private static final long serialVersionUID = 4846138039113922695L;

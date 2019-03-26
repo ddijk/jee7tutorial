@@ -15,7 +15,6 @@ import javax.persistence.Entity;
 import java.io.Serializable;
 
 @Entity
-@DiscriminatorValue("winter")
 @Data
 public class WinterLeague extends League implements Serializable{
     private static final long serialVersionUID = 8942582153559426625L;
