@@ -5,10 +5,9 @@
  * compliance with  the terms of the License at:
  * http://java.net/projects/javaeetutorial/pages/BerkeleyLicense
  */
-package javaeetutorial.roster.entity;
+package com.dijkrosoft.roster.entity;
 
 import java.io.Serializable;
-import javaeetutorial.roster.util.IncorrectSportException;
 import javax.persistence.Entity;
 
 @Entity
