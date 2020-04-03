@@ -10,14 +10,13 @@ package com.dijkrosoft.roster.entity;
 import java.io.Serializable;
 import java.util.Collection;
 import static javax.persistence.CascadeType.ALL;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 
 @Entity
 @Table(name = "PERSISTENCE_ROSTER_LEAGUE")
+@NamedQuery(name="findLeagueByName", query = "select g from League g where g.name=:name")
 public abstract class League implements Serializable {
     private static final long serialVersionUID = 5060910864394673463L;
     protected String id;

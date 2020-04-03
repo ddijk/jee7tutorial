@@ -8,6 +8,7 @@
 package com.dijkrosoft.roster.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ public class Team implements Serializable {
     private String id;
     private String name;
     private String city;
-    private Collection<Player> players;
+    private Collection<Player> players = new ArrayList<>();
     private League league;
     
     /** Creates a new instance of Team */

@@ -9,13 +9,11 @@ package com.dijkrosoft.roster.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "PERSISTENCE_ROSTER_PLAYER")
+@NamedQuery(name="findPlayerByName", query = "select p from com.dijkrosoft.roster.entity.Player p where p.name=:name")
 public class Player implements Serializable {
     private static final long serialVersionUID = -2760127516426049966L;
     private String id;
